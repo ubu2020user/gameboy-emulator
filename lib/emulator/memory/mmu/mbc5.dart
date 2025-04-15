@@ -24,7 +24,7 @@ class MBC5 extends MBC
     this.modeSelect = 0;
     this.romBank = 0;
 
-    this.cartRam = new Uint8List(MBC.RAM_PAGESIZE * 16);
+    this.cartRam = Uint8List(MBC.RAM_PAGESIZE * 16);
     this.cartRam.fillRange(0, this.cartRam.length, 0);
   }
 

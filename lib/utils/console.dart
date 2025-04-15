@@ -14,7 +14,7 @@ class Console
   {
     try
     {
-      JsonEncoder encoder = new JsonEncoder.withIndent('   ');
+      JsonEncoder encoder = JsonEncoder.withIndent('   ');
       return encoder.convert(obj);
     }
     catch(e){}

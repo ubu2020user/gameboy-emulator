@@ -13,10 +13,10 @@ class MBC3 extends MBC
   int ramBank = 0;
 
   /// Whether the real time clock is enabled for IO.
-  bool rtcEnabled;
+  bool rtcEnabled = false;
 
   /// The real time clock registers.
-  Uint8List rtc;
+  Uint8List rtc = Uint8List(4);
 
   MBC3(CPU cpu) : super(cpu);
 
@@ -28,10 +28,10 @@ class MBC3 extends MBC
     this.rtcEnabled = false;
     this.ramBank = 0;
 
-    this.rtc = new Uint8List(4);
+    this.rtc = Uint8List(4);
     this.rtc.fillRange(0, this.rtc.length, 0);
 
-    this.cartRam = new Uint8List(MBC.RAM_PAGESIZE * 4);
+    this.cartRam = Uint8List(MBC.RAM_PAGESIZE * 4);
     this.cartRam.fillRange(0, this.cartRam.length, 0);
   }
 

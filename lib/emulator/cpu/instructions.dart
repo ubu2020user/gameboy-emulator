@@ -466,12 +466,12 @@ class Instructions
                 return;
               }
             default:
-              throw new Exception("CB Prefix 0xf8 operation unknown 0x" + op.toRadixString(16));
+              throw Exception("CB Prefix 0xf8 operation unknown 0x" + op.toRadixString(16));
           }
           break;
         }
       default:
-        throw new Exception("CB Prefix operation unknown 0x" + op.toRadixString(16));
+        throw Exception("CB Prefix operation unknown 0x" + op.toRadixString(16));
     }
   }
 

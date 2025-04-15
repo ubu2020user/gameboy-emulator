@@ -1,39 +1,28 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class Modal
-{
+class Modal {
   /// Show a alert modal
   ///
   /// The onCancel callbacks receive BuildContext context as argument.
-  static void alert(BuildContext context, String title, String message, {Function onCancel})
-  {
-    showCupertinoDialog
-      (
+  static void alert(BuildContext context, String title, String message,
+      {Function()? onCancel}) {
+    showDialog(
         context: context,
-        builder: (BuildContext context)
-        {
-          return CupertinoAlertDialog
-            (
-              title: new Text(title),
-              actions:
-              [
-                new CupertinoDialogAction
-                (
-                  child: new Text('OK'),
-                  isDestructiveAction: true,
-                  onPressed:()
-                  {
+        builder: (BuildContext context) {
+          return AlertDialog(
+              title: Text(title),
+              actions: [
+                ElevatedButton(
+                  child: Text('OK'),
+                  // isDestructiveAction: true,
+                  onPressed: () {
                     Navigator.pop(context);
-                    if(onCancel != null)
-                    {
-                      onCancel();
-                    }
+                    onCancel?.call();
                   },
                 )
               ],
-              content: new Text(message)
-          );
-        }
-    );
+              content: Text(message));
+        });
   }
 }

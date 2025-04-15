@@ -12,11 +12,11 @@ class DartBoy extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return new MaterialApp
+    return MaterialApp
     (
       title: 'GBC',
-      theme: new ThemeData(primarySwatch: Colors.blue),
-      home: new MainScreen(title: 'GBC'),
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: MainScreen(title: 'GBC'),
       debugShowCheckedModeBanner: false,
       showPerformanceOverlay: false,
       showSemanticsDebugger: false,
